@@ -53,6 +53,7 @@ public class CHys {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
+        System.out.println("ESTOY EN DELETE");
         if (!shys.existsById(id)) {
             return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
         }
@@ -96,6 +97,5 @@ public class CHys {
         
         shys.save(hYs);
         return new ResponseEntity(new Mensaje("Skill actualizada"), HttpStatus.OK);
-
     }
 }
