@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
  * @author Cristian Cacciolatti
  */
 @Repository
-public interface IPersonaRepository extends JpaRepository<Persona,Integer> {
+public interface IPersonaRepository extends JpaRepository<Persona, Integer> {
     public Optional<Persona> findByNombre(String nombre);
     public boolean existsByNombre(String nombre);
 }
