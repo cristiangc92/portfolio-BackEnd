@@ -1,53 +1,35 @@
-package com.portfolio.cgc.Entity;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.portfolio.cgc.Dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  *
  * @author Cristian Cacciolatti
  */
-@Entity
-public class Persona {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+public class dtoPersona {
+    @NotBlank
     private String nombre;
-    
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    @NotBlank
     private String apellido;
-    
-    @NotNull
-    private String descripcion;
-    
+    @NotBlank
+    private String descripcion;    
+    @NotBlank
     private String img;
 
-    public Persona() {
+    public dtoPersona() {
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String img) {
+    public dtoPersona(String nombre, String apellido, String descripcion, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
         this.img = img;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -80,5 +62,7 @@ public class Persona {
 
     public void setImg(String img) {
         this.img = img;
-    }    
+    }
+    
+    
 }
